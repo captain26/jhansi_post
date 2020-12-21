@@ -1,0 +1,27 @@
+body {
+    background-color: #fafafa;
+}
+
+.topbar{
+    background-color: #ffffff;
+    border-bottom: 1px solid #dbdbdb;
+
+}
+.toptext{
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+}
+
+.card1 {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dbdbdb;  
+    margin: auto;
+    max-width: 600px;
+    max-height: 1000px;
+    background-color: #ffffff;  
+}
+
+.imgs{
+    max-width: 600px;
+}
