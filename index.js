@@ -23,13 +23,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/adminDB", {
+mongoose.connect("mongodb+srv://admin123:admin123@cluster0.2vggz.mongodb.net/admindb?retryWrites=true&w=majority", {
   useNewUrlParser: true,
 });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
-  email: String,
+  username: String,
   password: String,
 });
 
@@ -92,7 +92,7 @@ app.post("/admin", (req, res) => {
     password: req.body.password,
   });
 
-  req.login(user, function (err) {
+  req.logIn(user, function (err) {
     if (err) {
       console.log(err);
       res.redirect("/admin");
@@ -105,12 +105,13 @@ app.post("/admin", (req, res) => {
 });
 app.post("/admin/register", (req, res) => {
   User.register(
-    { username: req.body.email },
+    {username: req.body.email},
     req.body.password,
     function (err, user) {
       if (err) {
         console.log(err);
       } else {
+        console.log("xyz")
         passport.authenticate("local")(req, res, function () {
           res.redirect("/admin/dashboard");
         });
