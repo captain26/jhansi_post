@@ -7,6 +7,9 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
+
+var check = 0;
+
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -55,7 +58,7 @@ app.get("/National", (req, res) => {
   res.render("national");
 });
 app.get("/admin", (req, res) => {
-    if(req.isAuthenticated()){
+    if(check === 1){
         res.redirect("/admin/dashboard");
     }else{
         res.render("admin");
@@ -63,62 +66,32 @@ app.get("/admin", (req, res) => {
 });
 
 app.get("/admin/dashboard", function (req, res) {
-  if (req.isAuthenticated()) {
+  if (check === 1) {
     res.render("dashboard");
   } else {
-    res.render("register");
+    res.redirect("/admin");
   }
 });
 
-app.get("/admin/register", (req, res) => {
-    if(req.isAuthenticated()){
-        res.redirect("/admin/dashboard");
-    }else{
-        res.render("register");
-    }
-});
 
 app.get("/logout", function (req, res) {
-  req.logout();
-  req.session.destroy(function () {
-    res.clearCookie("connect.sid");
-    res.redirect("/admin");
-  });
+  check = 0;
+  res.redirect("/admin");
 });
 
 app.post("/admin", (req, res) => {
-  const user = new User({
-    username: req.body.email,
-    password: req.body.password,
-  });
-
-  req.logIn(user, function (err) {
-    if (err) {
-      console.log(err);
+  if(req.body.email === "admin"){
+    if(req.body.password === "admin"){
+      check = 1;
+      res.redirect("/admin/dashboard");
+    }else{
       res.redirect("/admin");
-    } else {
-      passport.authenticate("local")(req, res, function () {
-        res.redirect("/admin/dashboard");
-      });
     }
-  });
+  }else{
+    res.redirect("/admin");
+  }
 });
-app.post("/admin/register", (req, res) => {
-  User.register(
-    {username: req.body.email},
-    req.body.password,
-    function (err, user) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("xyz")
-        passport.authenticate("local")(req, res, function () {
-          res.redirect("/admin/dashboard");
-        });
-      }
-    }
-  );
-});
+
 
 app.listen(3000, function () {
   console.log("server port 3000 is working");
