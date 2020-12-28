@@ -4,9 +4,6 @@ const ejs = require("ejs");
 const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
-const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
-
 
 var check = 0;
 
@@ -23,12 +20,10 @@ app.use(
   })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 mongoose.connect("mongodb+srv://admin123:admin123@cluster0.2vggz.mongodb.net/admindb?retryWrites=true&w=majority", {
   useNewUrlParser: true,
 });
+
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -36,13 +31,7 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-userSchema.plugin(passportLocalMongoose);
-
 const User = new mongoose.model("User", userSchema);
-
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 
 app.get("/", (req, res) => {
   res.render("home");
