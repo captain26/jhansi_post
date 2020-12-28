@@ -1,62 +1,217 @@
-<%- include('headers'); -%>
-    <div class="row my-3 content" >
-        <div class="col-lg-2 offset-lg-2 rounded cate p-3">
-            <h3>Category</h3>
-              <div class="nav flex-column" aria-orientation="vertical">
-                  <a class="nav-link" style="color: black;" href="/sports">Sports</a>
-                  <a class="nav-link" style="color: black;" href="/local">Local</a>
-                  <a class="nav-link" style="color: black;" href="/national">National</a>
-                  
+
+        <%- include("partials/header"); -%>
+
+        <!-- partial -->
+        <div class="content-wrapper">
+          <div class="container">
+            <div class="row" data-aos="fade-up">
+              <div class="col-xl-8 stretch-card grid-margin">
+                <div class="position-relative">
+                  <img
+                    src="assets/images/dashboard/banner.jpg"
+                    alt="banner"
+                    class="img-fluid"
+                  />
+                  <div class="banner-content">
+                    <div class="badge badge-danger fs-12 font-weight-bold mb-3">
+                      global news
+                    </div>
+                    <h1 class="mb-0">GLOBAL PANDEMIC</h1>
+                    <h1 class="mb-2">
+                      Coronavirus Outbreak LIVE Updates: ICSE, CBSE Exams
+                      Postponed, 168 Trains
+                    </h1>
+                    <div class="fs-12">
+                      <span class="mr-2">Photo </span>10 Minutes ago
+                    </div>
+                  </div>
+                </div>
               </div>
+              <div class="col-xl-4 stretch-card grid-margin">
+                <div class="card bg-dark text-white">
+                  <div class="card-body">
+                    <h2>Latest news</h2>
+
+                    <div
+                      class="d-flex border-bottom-blue pt-3 pb-4 align-items-center justify-content-between"
+                    >
+                      <div class="pr-3">
+                        <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
+                        <div class="fs-12">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                      </div>
+                      <div class="rotate-img">
+                        <img
+                          src="assets/images/dashboard/home_1.jpg"
+                          alt="thumb"
+                          class="img-fluid img-lg"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex border-bottom-blue pb-4 pt-4 align-items-center justify-content-between"
+                    >
+                      <div class="pr-3">
+                        <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
+                        <div class="fs-12">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                      </div>
+                      <div class="rotate-img">
+                        <img
+                          src="assets/images/dashboard/home_2.jpg"
+                          alt="thumb"
+                          class="img-fluid img-lg"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="d-flex pt-4 align-items-center justify-content-between"
+                    >
+                      <div class="pr-3">
+                        <h5>Virus Kills Member Of Advising Iran’s Supreme</h5>
+                        <div class="fs-12">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                      </div>
+                      <div class="rotate-img">
+                        <img
+                          src="assets/images/dashboard/home_3.jpg"
+                          alt="thumb"
+                          class="img-fluid img-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" data-aos="fade-up">
+              <div class="col-lg-3 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Category</h2>
+                    <ul class="vertical-menu">
+                      <li><a href="/business">Politics</a></li>
+                      <li><a href="/business">International</a></li>
+                      <li><a href="/business">Finance</a></li>
+                      <li><a href="/business">Health care</a></li>
+                      <li><a href="/business">Technology</a></li>
+                      <li><a href="/business">Jobs</a></li>
+                      <li><a href="/business">Media</a></li>
+                      <li><a href="/business">Administration</a></li>
+                      <li><a href="/business">Sports</a></li>
+                      <li><a href="/business">Game</a></li>
+                      <li><a href="/business">Art</a></li>
+                      <li><a href="/business">Kids</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9 stretch-card grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
+                      <div class="col-sm-4 grid-margin">
+                        <div class="position-relative">
+                          <div class="rotate-img">
+                            <img
+                              src="assets/images/dashboard/home_4.jpg"
+                              alt="thumb"
+                              class="img-fluid"
+                            />
+                          </div>
+                          <div class="badge-positioned">
+                            <span class="badge badge-danger font-weight-bold"
+                              >Flash news</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8  grid-margin">
+                        <h2 class="mb-2 font-weight-600">
+                          South Korea’s Moon Jae-in sworn in vowing to address
+                          North
+                        </h2>
+                        <div class="fs-13 mb-2">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                        <p class="mb-0">
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, when an
+                        </p>
+                      </div>
+                    </div></a>
+
+                    <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
+                      <div class="col-sm-4 grid-margin">
+                        <div class="position-relative">
+                          <div class="rotate-img">
+                            <img
+                              src="assets/images/dashboard/home_5.jpg"
+                              alt="thumb"
+                              class="img-fluid"
+                            />
+                          </div>
+                          <div class="badge-positioned">
+                            <span class="badge badge-danger font-weight-bold"
+                              >Flash news</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8  grid-margin">
+                        <h2 class="mb-2 font-weight-600">
+                          No charges over 2017 Conservative battle bus cases
+                        </h2>
+                        <div class="fs-13 mb-2">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                        <p class="mb-0">
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, when an
+                        </p>
+                      </div>
+                    </div></a>
+
+                    <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
+                      <div class="col-sm-4">
+                        <div class="position-relative">
+                          <div class="rotate-img">
+                            <img
+                              src="assets/images/dashboard/home_6.jpg"
+                              alt="thumb"
+                              class="img-fluid"
+                            />
+                          </div>
+                          <div class="badge-positioned">
+                            <span class="badge badge-danger font-weight-bold"
+                              >Flash news</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <h2 class="mb-2 font-weight-600">
+                          Kaine: Trump Jr. may have committed treason
+                        </h2>
+                        <div class="fs-13 mb-2">
+                          <span class="mr-2">Photo </span>10 Minutes ago
+                        </div>
+                        <p class="mb-0">
+                          Lorem Ipsum has been the industry's standard dummy
+                          text ever since the 1500s, when an
+                        </p>
+                      </div>
+                    </div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 rounded news mx-lg-4">
-            <div class="row p-4">
-                <div class="col-lg-4">
-                    <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-                </div>
-                <div class="col-lg-8">
-                    <h3>This is the title and under thiss is content</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                </div>
-            </div>
-            <div class="row p-4">
-                <div class="col-lg-4">
-                    <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-                </div>
-                <div class="col-lg-8">
-                    <h3>This is the title and under thiss is content</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                </div>
-            </div>
-            <div class="row p-4">
-                <div class="col-lg-4">
-                    <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-                </div>
-                <div class="col-lg-8">
-                    <h3>This is the title and under thiss is content</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                </div>
-            </div>
-            <div class="row p-4">
-                <div class="col-lg-4">
-                    <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-                </div>
-                <div class="col-lg-8">
-                    <h3>This is the title and under thiss is content</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                </div>
-            </div>
-            <div class="row p-4">
-                <div class="col-lg-4">
-                    <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-                </div>
-                <div class="col-lg-8">
-                    <h3>This is the title and under thiss is content</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <%- include('footer'); -%>
-  </body>
-</html>
+
+        <%- include("partials/footer"); -%>
