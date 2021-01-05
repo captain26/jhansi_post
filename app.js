@@ -5,6 +5,17 @@ const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
 
+
+var fs = require('fs'); 
+var path = require('path'); 
+var multer = require('multer'); 
+
+const GridFsStorage = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
+const methodOverride = require('method-override');
+
+
+
 var check = 0;
 
 app.set("view engine", "ejs");
@@ -19,13 +30,41 @@ app.use(
     saveUninitialized: false,
   })
 );
+const mongoURI = "mongodb+srv://admin123:admin123@cluster0.2vggz.mongodb.net/admindb?retryWrites=true&w=majority";
 
-mongoose.connect("mongodb+srv://admin123:admin123@cluster0.2vggz.mongodb.net/admindb?retryWrites=true&w=majority", {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 mongoose.set("useCreateIndex", true);
+
+mongoose.set('useUnifiedTopology', true);
+
+// Init gfs
+let gfs;
+
+conn.once('open', () => {
+  // Init stream
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
+
+// Create storage engine
+const storage = new GridFsStorage({
+  url: mongoURI,
+  file: (req, file) => {
+    return new Promise((resolve, reject) => {
+      const filename = file.originalname;
+      const fileInfo = {
+          filename: filename,
+          bucketName: 'uploads'
+      };
+      resolve(fileInfo);
+    });
+  }
+});
+const upload = multer({ storage });
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -33,7 +72,11 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = new mongoose.model("User", userSchema);
-
+app.get("/admin/xyz",(req,res) => {
+  if(check === 1){
+    
+  }
+})
 app.get("/", (req, res) => {
   res.render("home");
 });

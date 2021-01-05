@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
+const { type } = require("jquery");
 
 var check = 0;
 
@@ -25,6 +26,9 @@ mongoose.connect("mongodb+srv://admin123:admin123@cluster0.2vggz.mongodb.net/adm
 });
 
 mongoose.set("useCreateIndex", true);
+
+
+
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -62,6 +66,11 @@ app.get("/admin/dashboard", function (req, res) {
   }
 });
 
+app.get('/admin/type', (req,res) => {
+  gfs.files.find().toArray((err, files) => {
+    res.render('upload', { files: files, types: types });
+  });
+})
 
 app.get("/logout", function (req, res) {
   check = 0;
