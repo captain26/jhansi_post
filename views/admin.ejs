@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>SA BROKING</title>  
+  <title>JHANSI POST</title>  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="-1" />
@@ -91,5 +91,16 @@ body {
       </div>
     </form>
 </body>
+
+<script>
+  window.addEventListener( "pageshow", function ( event ) {
+ var historyTraversal = event.persisted || 
+                        ( typeof window.performance != "undefined" && 
+                             window.performance.navigation.type === 2 );
+ if ( historyTraversal ) {
+   window.location.reload();
+ }
+});
+ </script>
 
 </html>
