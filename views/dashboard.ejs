@@ -18,22 +18,51 @@
 <h1 style="text-align: center; padding-top: 25px;" class="display-4" >Admin Dashboard</h1> 
 <div style="position: absolute; right: 10px;">
   <a href="/logout" style="text-decoration: none; color: white;"><button class="btn btn-danger">Logout</button></a>
-
 </div>
 
 <br>
 <br>
 <br>
 
+<center>
+  <form action="/admin/addnews" method="POST" enctype="multipart/form-data"> 
+    <div class="form-group" style="width: 70%;">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Any Title" name="title">
+    </div>
+    <div class="form-group" style="width: 70%;">
+      <label for="exampleFormControlTextarea1">Content</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="12"  placeholder="Any Content" name="content"></textarea>
+    </div>
+    <label for="cars">Choose category:</label>
+    <select id="cars" name="category" class="form-control" style="width: 70%;">
+      <option value="Local">Local</option>
+      <option value="National">National</option>
+      <option value="Sports">Sports</option>
+      <option value="business">Business</option>
+    </select>
+      <div class="form-group" style="width: 70%;">
+        <label for="exampleFormControlInput2">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Any Name" name="name">
+      </div>
+      <br>
+      <input type="file" name="photo" id="file" single>
+      <br>
+      <br>
+      <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+  </form> 
+  </center>
 
-
-<table class="table">
-  <tbody>
-    
-  </tbody>
-</table>
-
-
+  <script>
+    window.addEventListener( "pageshow", function ( event ) {
+   var historyTraversal = event.persisted || 
+                          ( typeof window.performance != "undefined" && 
+                               window.performance.navigation.type === 2 );
+   if ( historyTraversal ) {
+     window.location.reload();
+   }
+ });
+   </script>
 </body>
 
 </html>
