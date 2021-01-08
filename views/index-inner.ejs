@@ -3,31 +3,27 @@
         <div class="content-wrapper">
           <div class="container">
             <div class="col-sm-12">
-              <div class="card" data-aos="fade-up">
+              <div class="card">
                 <div class="card-body">
                       <div>
                         <h1 class="font-weight-600 mb-1">
-                          I shouted above the sudden noise.
+                          <%= news.title %> 
                         </h1>
                         <p class="fs-13 text-muted mb-0">
                           <span class="mr-2">Photo </span>10 Minutes ago
                         </p>
                         <div class="rotate-img">
                           <img
-                            src="../assets/images/inner/inner_1.jpg"
+                            src="http://localhost:3000/photo/<%= news.photo %>"
                             alt="banner"
                             class="img-fluid mt-4 mb-4"
                           />
                         </div>
                         <p class="mb-4 fs-15">
-                          He has led a remarkable campaign, defying the
-                          traditional mainstream parties courtesy of his En
-                          Marche! movement. For many, however, the campaign has
-                          become less about backing Macron and instead about
-                          voting against Le Pen, the National Front candidate.
+                          <%= news.content %> 
                         </p>
                       </div>
-                      <div>
+                      <!-- <div>
                         <h1 class="font-weight-600 mb-1">
                           Boy arrives at Disappeared dig site
                         </h1>
@@ -86,21 +82,12 @@
                           faucibus neque at lacus tristique eu ultrices ipsum
                           mollis.
                         </p>
-                      </div>
+                      </div> -->
                       <div class="d-lg-flex">
                         <span class="fs-16 font-weight-600 mr-2 mb-1"
                           >Tags</span
                         >
                         <span class="badge badge-outline-dark mr-2 mb-1"
-                          >Trending</span
-                        >
-                        <span class="badge badge-outline-dark mr-2 mb-1"
-                          >Trending</span
-                        ><span class="badge badge-outline-dark mr-2 mb-1"
-                          >Trending</span
-                        ><span class="badge badge-outline-dark mr-2 mb-1"
-                          >Trending</span
-                        ><span class="badge badge-outline-dark mb-1"
                           >Trending</span
                         >
                       </div>
@@ -109,7 +96,5 @@
             </div>
           </div>
         </div>
-
-        <h1>hbxhfjgjdfghj</h1>
 <%- include("partials/footer"); -%>
 

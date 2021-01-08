@@ -95,18 +95,18 @@
                   <div class="card-body">
                     <h2>Category</h2>
                     <ul class="vertical-menu">
-                      <li><a href="/business">Politics</a></li>
-                      <li><a href="/business">International</a></li>
-                      <li><a href="/business">Finance</a></li>
-                      <li><a href="/business">Health care</a></li>
-                      <li><a href="/business">Technology</a></li>
-                      <li><a href="/business">Jobs</a></li>
-                      <li><a href="/business">Media</a></li>
-                      <li><a href="/business">Administration</a></li>
-                      <li><a href="/business">Sports</a></li>
-                      <li><a href="/business">Game</a></li>
-                      <li><a href="/business">Art</a></li>
-                      <li><a href="/business">Kids</a></li>
+                      <li><a href="/politics">Politics</a></li>
+                      <li><a href="/national">National</a></li>
+                      <li><a href="/business">Business</a></li>
+                      <li><a href="/local">Local</a></li>
+                      <li><a href="/">International</a></li>
+                      <li><a href="/">Finance</a></li>
+                      <li><a href="/healthcare">Health care</a></li>
+                      <li><a href="/">Technology</a></li>
+                      <li><a href="/">Jobs</a></li>
+                      <li><a href="/">Media</a></li>
+                      <li><a href="/">Administration</a></li>
+                      <li><a href="/sports">Sports</a></li>
                     </ul>
                   </div>
                 </div>
@@ -135,14 +135,14 @@
                         </div>
                       </div>
                       <div class="col-sm-8  grid-margin">
-                        <h2 class="mb-2 font-weight-600">
+                        <h2 class="mb-1 font-weight-600">
                           <%= news.title %>
                         </h2>
-                        <!-- <div class="fs-13 mb-2">
-                          <span class="mr-2">Photo </span>10 Minutes ago
-                        </div> -->
+                        <div class="fs-13 mb-2">
+                          <span class="fs-13 mr-2">Category </span><span class="badge badge-outline-dark mr-2"><%= news.category %></span> 
+                        </div>
                         <p class="mb-0">
-                          <%= news.content.substring(0, 100) + " ..." %>
+                          <%= news.content.substring(0, 160) + " ..." %>
                         </p>
                       </div>
                     </div></a>

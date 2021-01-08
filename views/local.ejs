@@ -1,35 +1,44 @@
-<%- include('headers'); -%>
-<div class="row my-3 content">
-    <div class="col-lg-2 offset-lg-2 rounded cate p-3">
-        <h3>Category</h3>
-          <div class="nav flex-column" aria-orientation="vertical">
-              <a class="nav-link" style="color: black;" href="/sports">Sports</a>
-              <a class="nav-link" style="color: black;" href="/local">Local</a>
-              <a class="nav-link" style="color: black;" href="/national">National</a>
-              
+<%- include("partials/header"); -%>
+
+        <div class="content-wrapper">
+          <div class="container">
+            <div class="col-sm-12">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <h1 class="font-weight-600 mb-4">
+                        LOCAL
+                      </h1>
+                    </div>
+                  </div>
+    <%  news.forEach(function(news){ %>
+
+      <a href="/news/<%= news._id %> " style="text-decoration: none; color: black; "><div class="row">
+        <div class="col-sm-4 grid-margin">
+          <div class="rotate-img">
+            <img
+            src="http://localhost:3000/photo/<%= news.photo %>"
+              alt="banner"
+              class="img-fluid"
+            />
           </div>
-    </div>
-    <div class="col-lg-6 rounded news mx-lg-4">
-        <div class="row p-4">
-            <div class="col-lg-4">
-                <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-            </div>
-            <div class="col-lg-8">
-                <h3>This is the title and under thiss is content</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-            </div>
         </div>
-        <div class="row p-4">
-            <div class="col-lg-4">
-                <img class="imgs rounded" src="https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg"/>
-            </div>
-            <div class="col-lg-8">
-                <h3>This is the title and under thiss is content</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
-            </div>
+        <div class="col-sm-8 grid-margin">
+          <h2 class="font-weight-600 mb-2"><%= news.title %> </h2>
+          <p class="fs-13 text-muted mb-0">
+            <span class="mr-2">Photo </span>10 Minutes ago
+          </p>
+          <p class="fs-15"><%= news.content.substring(0, 330) + " ..." %> 
+          </p>
         </div>
+      </div></a>
+<% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
 
-        </div>
-        </div>
-
-<%- include('footer'); -%>
+<%- include("partials/footer"); -%>
