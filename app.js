@@ -93,11 +93,9 @@ app.post('/admin/addnews', (req, res) => {
   upload.single('photo')(req, res, (err) => {
     if (err) {
       return res.status(400).json({ message: "Upload Request Validation Failed" });
-    } else if(!req.body.name) {
-      return res.status(400).json({ message: "No photo name in request body" });
     }
-  
-    let photoName = req.body.name;
+
+    let photoName = req.file.originalname;
   
     // Covert buffer to Readable Stream
     const readableTrackStream = new Readable();
@@ -120,8 +118,7 @@ app.post('/admin/addnews', (req, res) => {
       return res.redirect("/");
     }); 
 
-    var post = new News({ 
-      name: req.body.name,
+    var post = new News({
       photo: id,
       category: req.body.category,
       title: req.body.title,
@@ -137,7 +134,7 @@ app.post('/admin/addnews', (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  News.find({}, function (err, news) {
+  News.find().sort([["_id", "desc"]]).exec((err, news) => {
     res.render("home" , {news: news});
   });
 });
@@ -145,13 +142,44 @@ app.get("/", (req, res) => {
 app.get("/news/:newsId", (req, res) => {
   const requestedNewsId = req.params.newsId;
   News.findOne({ _id: requestedNewsId }, function (err, news) {
-    console.log(news);
-    res.render("index-inner");
+    res.render("index-inner", {news: news});
   });
 });
 
 app.get("/business", (req, res) => {
-  res.render("business");
+  News.find({"category": "Business"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("business" , {news: news});
+  });
+});
+
+app.get("/local", (req, res) => {
+  News.find({"category": "Local"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("local" , {news: news});
+  });
+});
+
+app.get("/national", (req, res) => {
+  News.find({"category": "National"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("national" , {news: news});
+  });
+});
+
+app.get("/sports", (req, res) => {
+  News.find({"category": "Sports"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("sports" , {news: news});
+  });
+});
+
+app.get("/politics", (req, res) => {
+  News.find({"category": "Politics"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("politics" , {news: news});
+  });
+});
+
+app.get("/healthcare", (req, res) => {
+  News.find({"category": "Healthcare"}).sort([["_id", "desc"]]).exec((err, news) => {
+    res.render("healthcare" , {news: news});
+  });
 });
 
 app.get("/aboutus", (req, res) => {
@@ -195,6 +223,10 @@ app.post("/admin", (req, res) => {
   }else{
     res.redirect("/admin");
   }
+});
+
+app.use(function(req, res, next) {
+  res.render("404");
 });
 
 let port = process.env.PORT;

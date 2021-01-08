@@ -12,156 +12,28 @@
                       </h1>
                     </div>
                   </div>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_7.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_8.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_9.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            Kaine: Trump Jr. may have committed treason
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_10.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            South Korea’s Moon Jae-in sworn in vowing to address
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_11.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
-                      <a href="/index-inner" style="text-decoration: none; color: black; "><div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src="../assets/images/business/business_12.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            Kaine: Trump Jr. may have committed treason
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a
-                            type specimen book.
-                          </p>
-                        </div>
-                      </div></a>
+    <%  news.forEach(function(news){ %>
+
+      <a href="/news/<%= news._id %> " style="text-decoration: none; color: black; "><div class="row">
+        <div class="col-sm-4 grid-margin">
+          <div class="rotate-img">
+            <img
+            src="http://localhost:3000/photo/<%= news.photo %>"
+              alt="banner"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="col-sm-8 grid-margin">
+          <h2 class="font-weight-600 mb-2"><%= news.title %> </h2>
+          <p class="fs-13 text-muted mb-0">
+            <span class="mr-2">Photo </span>10 Minutes ago
+          </p>
+          <p class="fs-15"><%= news.content.substring(0, 330) + " ..." %> 
+          </p>
+        </div>
+      </div></a>
+<% }) %>
                 </div>
               </div>
             </div>
